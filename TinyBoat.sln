@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kTools.Mirrors.Runtime", "kTools.Mirrors.Runtime.csproj", "{dd8f6850-d416-a5a8-a04b-cb1143373b81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{52eef4ac-ce4e-96f7-6aa2-26f1b3f222b5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kTools.Mirrors.Editor", "kTools.Mirrors.Editor.csproj", "{1d4081de-aed9-0c9f-4914-22b799a8fddd}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kTools.Mirrors.Editor.Tests", "kTools.Mirrors.Editor.Tests.csproj", "{96655d43-6096-2859-1cb3-98a01cda9cbf}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{dd8f6850-d416-a5a8-a04b-cb1143373b81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{dd8f6850-d416-a5a8-a04b-cb1143373b81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52eef4ac-ce4e-96f7-6aa2-26f1b3f222b5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52eef4ac-ce4e-96f7-6aa2-26f1b3f222b5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1d4081de-aed9-0c9f-4914-22b799a8fddd}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1d4081de-aed9-0c9f-4914-22b799a8fddd}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96655d43-6096-2859-1cb3-98a01cda9cbf}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96655d43-6096-2859-1cb3-98a01cda9cbf}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
