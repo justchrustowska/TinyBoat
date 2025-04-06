@@ -3,22 +3,18 @@ using UnityEngine;
 
 public class DockSystem : MonoBehaviour
 {
-    public static event Action OnDockEnter;
-    public static event Action OnDockExit;
-    public static event Action OnPlayerEnter;
+    public static event Action OnDockEnter; // gracz wysiada z łodzi
+    
+    public GameObject player;
+    public Transform playerSpawnPoint;
+
+    public bool canExit = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Boat"))
         {
-            OnDockEnter?.Invoke();
-            Debug.LogError("Dock enter");
-        }
-
-        if (other.CompareTag("Player"))
-        {
-            OnPlayerEnter?.Invoke();
-            Debug.LogError("isPlayer");
+            canExit = true;
         }
     }
 
@@ -26,8 +22,19 @@ public class DockSystem : MonoBehaviour
     {
         if (other.CompareTag("Boat"))
         {
-            OnDockExit?.Invoke();
-            Debug.LogError("Dock exit");
+            canExit = false;
+        }
+    }
+
+    void Update()
+    {
+        if (canExit && Input.GetKeyDown(KeyCode.E))
+        {
+            OnDockEnter?.Invoke();
+            player.SetActive(true);
+            player.transform.position = playerSpawnPoint.position;
+            GameManager.Instance.SwitchToPlayer();
+            canExit = false;
         }
     }
 }

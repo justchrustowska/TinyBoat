@@ -1,4 +1,5 @@
 using System;
+using TinyBoat;
 using UnityEngine;
 using Unity.Cinemachine;
 
@@ -8,9 +9,6 @@ public class CameraTargetSwitcher : MonoBehaviour
     public GameObject playerTarget;
     public CinemachineVirtualCameraBase virtualCamera;
 
-    public bool isNearDock;
-    public bool isPlayer;
-
     private void Awake()
     {
         boatTarget = GameObject.FindGameObjectWithTag("Boat");
@@ -19,40 +17,39 @@ public class CameraTargetSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (isNearDock && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchToPlayerTarget();
         }
 
-        if (isPlayer && Input.GetKeyDown(KeyCode.E))
+        if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
         {
-            SwitchToBoatTarget();
+            virtualCamera.Follow = boatTarget.transform;
+            virtualCamera.LookAt = boatTarget.transform;
+        }
+
+        if (GameManager.Instance.currentControlState == ControlState.ControllingCharacter)
+        {
+            virtualCamera.Follow = playerTarget.transform;
+            virtualCamera.LookAt = playerTarget.transform;
         }
     }
 
-    void OnEnable()
+    /*void OnEnable()
     {
-        DockSystem.OnDockEnter += IsBoatNearDock;
-        DockSystem.OnPlayerEnter += IsPlayerNearDock;
+        DockSystem.OnDockEnter += SwitchToPlayerTarget;
+        BoatBoarding.OnBoarding += SwitchToBoatTarget;
     }
 
     void OnDisable()
     {
-        DockSystem.OnDockEnter -= IsBoatNearDock;
-    }
-
-    void IsBoatNearDock()
-    {
-        isNearDock = true;
-    }
-
-    void IsPlayerNearDock()
-    {
-        isPlayer = true;
-    }
+        DockSystem.OnDockEnter -= SwitchToPlayerTarget;
+        BoatBoarding.OnBoarding -= SwitchToBoatTarget;
+    }*/
 
     void SwitchToPlayerTarget()
     {
+        
         virtualCamera.Follow = playerTarget.transform;
         virtualCamera.LookAt = playerTarget.transform;
     }
