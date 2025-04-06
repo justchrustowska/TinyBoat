@@ -1,4 +1,5 @@
 using System;
+using TinyBoat;
 using UnityEngine;
 
 public class DockSystem : MonoBehaviour
@@ -28,13 +29,11 @@ public class DockSystem : MonoBehaviour
 
     void Update()
     {
-        if (canExit && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canExit)
         {
             OnDockEnter?.Invoke();
-            player.SetActive(true);
-            player.transform.position = playerSpawnPoint.position;
+           player.transform.position = playerSpawnPoint.position;
             GameManager.Instance.SwitchToPlayer();
-            canExit = false;
         }
     }
 }

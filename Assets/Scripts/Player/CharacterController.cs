@@ -16,6 +16,7 @@ public class CharacterController : MonoBehaviour
     private bool isLooking = false;
 
     private Transform cameraTransform;
+    [SerializeField] private Vector3 _startTransform;
     private float cameraRotationX = 0f;
     private PlayerControls _playerControls;
     private InputAction _moveAction;
@@ -24,6 +25,7 @@ public class CharacterController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         _playerControls = new PlayerControls();
+        _startTransform = transform.position;
     }
 
     void Update()
@@ -39,6 +41,11 @@ public class CharacterController : MonoBehaviour
 
             Vector3 move = new Vector3(h, 0, v) * moveSpeed * Time.deltaTime;
             transform.Translate(move);
+        }
+        
+        if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
+        {
+            transform.position = _startTransform;
         }
     }
 }

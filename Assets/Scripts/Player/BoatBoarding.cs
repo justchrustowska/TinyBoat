@@ -28,7 +28,7 @@ namespace TinyBoat
         void Update()
         {
             
-            if (canBoard && Input.GetKeyDown(KeyCode.E))
+            if (canBoard && Input.GetKeyDown(KeyCode.F))
             {
                 OnBoarding?.Invoke();
                 GameManager.Instance.SwitchToBoat();
