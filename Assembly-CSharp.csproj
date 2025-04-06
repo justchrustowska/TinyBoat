@@ -46,9 +46,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\SpawnManager\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Player\BoatBoarding.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController.cs" />
     <Compile Include="Assets\Scripts\Boat\DockSystem.cs" />
+    <Compile Include="Assets\Scripts\SpawnManager\PortTrigger.cs" />
     <Compile Include="Assets\Scripts\WaterWaves.cs" />
     <Compile Include="Assets\AureDevGames\Water Stylized Shader Orto &amp; Perspective Camera\Scripts\FloatingObject.cs" />
     <Compile Include="Assets\Scripts\Player\GameState.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="Assets\Scripts\Boat\BoatController.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraTargetSwitcher.cs" />
     <Compile Include="Assets\Art\NewMonoBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\SpawnManager\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\StateMachines\PlayerStateMachine.cs" />
     <Compile Include="Assets\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

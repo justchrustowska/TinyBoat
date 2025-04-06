@@ -1,51 +1,52 @@
 using System;
-using TinyBoat;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CharacterController : MonoBehaviour
-
+namespace TinyBoat
 {
-    public float moveSpeed = 5f;
-    public float rotationSpeed = 2f;
 
-    private Rigidbody rb;
-    private Vector2 moveInput;
-    private Vector2 lookInput;
-    private bool isLooking = false;
 
-    private Transform cameraTransform;
-    [SerializeField] private Vector3 _startTransform;
-    private float cameraRotationX = 0f;
-    private PlayerControls _playerControls;
-    private InputAction _moveAction;
+    public class CharacterController : MonoBehaviour
 
-    private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        _playerControls = new PlayerControls();
-        _startTransform = transform.position;
-    }
+        public float moveSpeed = 5f;
+        public float rotationSpeed = 5f;
 
-    void Update()
-    {
-        if (GameManager.Instance.currentControlState == ControlState.ControllingCharacter)
+        private Rigidbody rb;
+
+        [SerializeField] private Vector3 _startTransform;
+        private PlayerControls _playerControls;
+        private InputAction _moveAction;
+
+        private void Awake()
         {
-            /*Vector2 moveDir = _moveAction.ReadValue<Vector2>();
-            Vector3 velocity = rb.velocity;
-            velocity.x = moveDir.x * moveSpeed * Time.fixedDeltaTime;*/
-
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
-
-            Vector3 move = new Vector3(h, 0, v) * moveSpeed * Time.deltaTime;
-            transform.Translate(move);
+            rb = GetComponent<Rigidbody>();
+            _playerControls = new PlayerControls();
+            _startTransform = transform.position;
         }
-        
-        if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
+
+        void Update()
         {
-            transform.position = _startTransform;
+            if (GameManager.Instance.currentControlState == ControlState.ControllingCharacter)
+            {
+                float h = Input.GetAxis("Horizontal");
+                float v = Input.GetAxis("Vertical");
+
+                Vector3 move = new Vector3(h, 0, v) * moveSpeed * Time.deltaTime;
+                transform.Translate(move);
+
+                /*if (Input.GetMouseButton(1))
+                {
+                    float mouseX = Input.GetAxis("Mouse X");
+                    transform.Rotate(Vector3.up, mouseX * rotationSpeed * Time.deltaTime);
+                }*/
+            }
+
+            if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
+            {
+                transform.position = _startTransform;
+            }
         }
     }
 }

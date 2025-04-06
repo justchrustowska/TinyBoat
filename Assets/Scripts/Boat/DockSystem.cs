@@ -32,6 +32,8 @@ public class DockSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && canExit)
         {
             OnDockEnter?.Invoke();
+            player.transform.position = playerSpawnPoint.position;
+            player.SetActive(true);
            player.transform.position = playerSpawnPoint.position;
             GameManager.Instance.SwitchToPlayer();
         }

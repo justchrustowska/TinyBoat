@@ -450,6 +450,9 @@
         },
         {
             "m_Id": "c68a6bfeff564b248d4ce269caad599e"
+        },
+        {
+            "m_Id": "08cdc1b38a734182bada76eb482e15bb"
         }
     ],
     "m_GroupDatas": [
@@ -1728,6 +1731,9 @@
             },
             {
                 "m_Id": "1eec6995f6b04abaaea92de74fc861c2"
+            },
+            {
+                "m_Id": "08cdc1b38a734182bada76eb482e15bb"
             }
         ]
     },
@@ -1949,6 +1955,40 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "08cdc1b38a734182bada76eb482e15bb",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.Alpha",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "21af42fe52bc4844ba93786c0f9b0f6e"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.Alpha"
+}
+
+{
     "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "09369f63f64d47e386343296e8bc3403",
@@ -2101,7 +2141,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -2738,8 +2778,8 @@
     "m_ObjectId": "1b55603d66da4fc49e65dc9ad98b0ac8",
     "m_Title": "BLEND OBJECT COLOR",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": -43.0,
+        "y": -293.0
     }
 }
 
@@ -3044,6 +3084,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "21af42fe52bc4844ba93786c0f9b0f6e",
+    "m_Id": 0,
+    "m_DisplayName": "Alpha",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Alpha",
+    "m_StageCapability": 2,
+    "m_Value": 1.0,
+    "m_DefaultValue": 1.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "22113d3083324e1d89311df41976c8f0",
     "m_Id": 2,
@@ -3220,8 +3275,8 @@
     "m_ObjectId": "28d03412e682475ab7ca76b6b496742c",
     "m_Title": "CAVES SET UP",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": -427.0,
+        "y": 1133.0
     }
 }
 
@@ -3805,8 +3860,8 @@
     "m_ObjectId": "396d13a284fe4101928818ac42318f01",
     "m_Title": "REFLECTIONS",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": 289.0,
+        "y": 1119.0
     }
 }
 
@@ -3954,7 +4009,7 @@
     "m_StageCapability": 2,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -3969,14 +4024,17 @@
         "m_Id": "2b02643fdd1540e685718ae17f251bb6"
     },
     "m_AllowMaterialOverride": false,
-    "m_SurfaceType": 0,
+    "m_SurfaceType": 1,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_RenderFace": 2,
+    "m_RenderFace": 0,
     "m_AlphaClip": false,
-    "m_CastShadows": true,
+    "m_CastShadows": false,
     "m_ReceiveShadows": true,
+    "m_DisableTint": false,
+    "m_AdditionalMotionVectorMode": 0,
+    "m_AlembicMotionVectors": false,
     "m_SupportsLODCrossFade": false,
     "m_CustomEditorGUI": "",
     "m_SupportVFX": false
@@ -4281,7 +4339,7 @@
     "m_StageCapability": 2,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -4572,7 +4630,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -4790,7 +4848,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -5307,8 +5365,8 @@
     "m_ObjectId": "658af11bd853495a95a31486625b0779",
     "m_Title": "PRIMARY FOAM",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": 2185.0,
+        "y": 1636.0
     }
 }
 
@@ -6176,7 +6234,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -6456,7 +6514,7 @@
     "m_StageCapability": 2,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -7293,8 +7351,8 @@
     "m_ObjectId": "a688971f8bd04af2a219705e0d9a1f33",
     "m_Title": "FOG",
     "m_Position": {
-        "x": 5121.6005859375,
-        "y": 1278.4000244140625
+        "x": 5604.0,
+        "y": 1633.0
     }
 }
 
@@ -7411,8 +7469,8 @@
     "m_ObjectId": "abb3c36d69fe4bd8a6258eff4839ca9a",
     "m_Title": "DEPTH",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": -1224.0,
+        "y": -326.0
     }
 }
 
@@ -7577,8 +7635,8 @@
     "m_ObjectId": "b1557fbda61d4a8fb1abe459ac967bc7",
     "m_Title": "INTERSECTION FOAM",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": 2791.0,
+        "y": 1606.0
     }
 }
 
@@ -8104,7 +8162,7 @@
     "m_StageCapability": 2,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -8344,8 +8402,8 @@
     "m_ObjectId": "c63484b628e54536939ae2838e52d66b",
     "m_Title": "WAVES MOVEMENT",
     "m_Position": {
-        "x": 4778.39990234375,
-        "y": -130.40005493164063
+        "x": 4779.0,
+        "y": -129.0
     }
 }
 
@@ -9036,8 +9094,8 @@
     "m_ObjectId": "d8da0964d9b546d09534c80d84befee7",
     "m_Title": "SPECULAR",
     "m_Position": {
-        "x": 3747.33837890625,
-        "y": 1724.000244140625
+        "x": 3748.0,
+        "y": 1725.0
     }
 }
 
@@ -9172,8 +9230,8 @@
     "m_ObjectId": "dd90a22460ad4b1cade700471366fbc8",
     "m_Title": "SECONDARY FOAM(ADDING LAYERS FROM DOWN TO UP)",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": 1355.0,
+        "y": 1655.0
     }
 }
 
@@ -9962,8 +10020,8 @@
     "m_ObjectId": "f27f0a3128164d98beb30cd773b63098",
     "m_Title": "CALCULATE WORLD OR LOCAL UVS",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": -1843.0,
+        "y": 1766.0
     }
 }
 
@@ -10193,8 +10251,8 @@
     "m_ObjectId": "f77ae05689b84c08b5dc11eb4ef5f940",
     "m_Title": "THE MAIN PIPELINE",
     "m_Position": {
-        "x": -1068.800048828125,
-        "y": 477.5999755859375
+        "x": -1068.0,
+        "y": 479.0
     }
 }
 

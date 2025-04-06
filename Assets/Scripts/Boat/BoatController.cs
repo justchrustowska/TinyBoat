@@ -15,7 +15,7 @@ namespace TinyBoat
         public GameObject playerOnBoard;
         
         
-        void Awake()
+        void Start()
         {
             _rb = GetComponent<Rigidbody>();
         }
@@ -23,13 +23,13 @@ namespace TinyBoat
         private void OnEnable()
         {
             BoatBoarding.OnBoarding += ActivePlayerOnBoard;
-            DockSystem.OnDockEnter += DeactivePlayerOnBoard;
+            PortTrigger.OnDockEnter += DeactivePlayerOnBoard;
         }
 
         private void OnDisable()
         {
             BoatBoarding.OnBoarding -= ActivePlayerOnBoard;
-            DockSystem.OnDockEnter -= DeactivePlayerOnBoard;
+            PortTrigger.OnDockEnter -= DeactivePlayerOnBoard;
         }
 
         void FixedUpdate()
@@ -43,6 +43,9 @@ namespace TinyBoat
                 float rotationInput = Input.GetAxis("Horizontal");
                 Vector3 rotation = Vector3.up * rotationInput * rotationSpeed * Time.fixedDeltaTime;
                 _rb.MoveRotation(_rb.rotation * Quaternion.Euler(rotation));
+                
+                /*Quaternion targetRotation = _rb.rotation * Quaternion.Euler(0, rotationInput * rotationSpeed * Time.fixedDeltaTime, 0);
+                _rb.MoveRotation(Quaternion.Slerp(_rb.rotation, targetRotation, 0.1f));*/
 
                 currentVelocity = _rb.velocity.magnitude;
                 MaxSpeed();
