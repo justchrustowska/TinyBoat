@@ -12,6 +12,7 @@ namespace TinyBoat
     {
         public float moveSpeed = 5f;
         public float rotationSpeed = 5f;
+        public Transform cameraRoot;
 
         private Rigidbody rb;
 
@@ -30,10 +31,19 @@ namespace TinyBoat
         {
             if (GameManager.Instance.currentControlState == ControlState.ControllingCharacter)
             {
+                Vector3 camForward = cameraRoot.forward;
+                camForward.y = 0f; // nie interesuje nas góra/dół
+                /*if (camForward != Vector3.zero)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(camForward);
+                    cameraRoot.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+                }*/
+                
                 float h = Input.GetAxis("Horizontal");
                 float v = Input.GetAxis("Vertical");
 
                 Vector3 move = new Vector3(h, 0, v) * moveSpeed * Time.deltaTime;
+                //Vector3 direction = (cameraRoot.forward * v + cameraRoot.right * h).normalized;
                 transform.Translate(move);
 
                 /*if (Input.GetMouseButton(1))

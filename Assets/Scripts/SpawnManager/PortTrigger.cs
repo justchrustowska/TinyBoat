@@ -48,6 +48,11 @@ namespace TinyBoat
                 OnDockEnter?.Invoke();
                 GameManager.Instance.SwitchToPlayer();
             }
+
+            if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
+            {
+                player.SetActive(false);
+            }
         }
     }
 }

@@ -148,7 +148,7 @@ Material:
     - _WaveStepness: 0.35
     m_Colors:
     - _BaseColor: {r: 0, g: 0.1989687, b: 1.110646, a: 1}
-    - _CaveColor: {r: 0.058873262, g: 0.1981132, b: 0.14225401, a: 0.41960785}
+    - _CaveColor: {r: 0.12477186, g: 0.67244333, b: 0.6444799, a: 0}
     - _CaveOffset: {r: -0.45, g: 0, b: 0, a: 0}
     - _CaveScale: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _CaveSecondaryColor: {r: 0, g: 0, b: 0, a: 0}
@@ -159,7 +159,7 @@ Material:
     - _IntersectionFoamColor: {r: 0.1237624, g: 0.67275965, b: 0.6474531, a: 0.44705883}
     - _PositionRipples: {r: 0, g: 0, b: 0, a: 0}
     - _SecondaryFoamColor: {r: 0, g: 0.005806202, b: 0.38490558, a: 0}
-    - _ShallowColor: {r: 0, g: 0.74509805, b: 0.475525, a: 1}
+    - _ShallowColor: {r: 0, g: 0.74509805, b: 0.5985315, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 0.31764707}
     - _SurfaceFoamColor: {r: 1.7129307, g: 1.7129307, b: 1.7129307, a: 0.019607844}
     - _TopColor: {r: 0, g: 0.17848217, b: 0.5622641, a: 0.44705883}
