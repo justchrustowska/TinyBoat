@@ -1,26 +1,12 @@
 using System;
 using UnityEngine;
 
-namespace TinyBoat
-{
     public class SpawnPoint: MonoBehaviour
     {
         public string spawnID;
 
-        private void Start()
+        private void Awake()
         {
-            if (SpawnManager.Instance != null)
-            {
-                SpawnManager.Instance.RegisterSpawn(spawnID, this);
-            }
-        }
-
-        private void OnDestroy()
-        {
-            if (SpawnManager.Instance != null)
-            {
-                SpawnManager.Instance.UnregisterSpawn(spawnID);
-            }
+            SpawnManager.Instance?.RegisterSpawn(spawnID, this);
         }
     }
-}

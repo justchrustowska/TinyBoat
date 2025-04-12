@@ -5,6 +5,7 @@ namespace TinyBoat
 {
     public class BoatController : MonoBehaviour
     {
+        private PlayerStateMachine _stateMachine;
         private Rigidbody _rb;
         private float _maxSpeed = 10f;
         
@@ -12,29 +13,41 @@ namespace TinyBoat
         public float maxSpeed = 15f;
         public float currentVelocity;
         public float rotationSpeed = 50f;
-        public GameObject playerOnBoard;
+
+        public bool canSwim;
         
         
         void Start()
         {
             _rb = GetComponent<Rigidbody>();
         }
-
+        
         private void OnEnable()
         {
-            BoatBoarding.OnBoarding += ActivePlayerOnBoard;
-            PortTrigger.OnDockEnter += DeactivePlayerOnBoard;
+            _stateMachine.OnStateChanged += HandleStateChanged;
         }
 
         private void OnDisable()
         {
-            BoatBoarding.OnBoarding -= ActivePlayerOnBoard;
-            PortTrigger.OnDockEnter -= DeactivePlayerOnBoard;
+            _stateMachine.OnStateChanged -= HandleStateChanged;
+        }
+
+        private void HandleStateChanged(IState newState)
+        {
+            if (newState is PlayerOnLandState)
+            {
+                canSwim = false;
+            }
+            else if (newState is PlayerBoatState)
+            {
+               canSwim = true;
+               Debug.Log("Can swim");
+            }
         }
 
         void FixedUpdate()
         {
-            if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
+           if (canSwim)
             {
 
                 if (Input.GetKey(KeyCode.W))
@@ -43,10 +56,6 @@ namespace TinyBoat
                 float rotationInput = Input.GetAxis("Horizontal");
                 Vector3 rotation = Vector3.up * rotationInput * rotationSpeed * Time.fixedDeltaTime;
                 _rb.MoveRotation(_rb.rotation * Quaternion.Euler(rotation));
-                
-                /*Quaternion targetRotation = _rb.rotation * Quaternion.Euler(0, rotationInput * rotationSpeed * Time.fixedDeltaTime, 0);
-                _rb.MoveRotation(Quaternion.Slerp(_rb.rotation, targetRotation, 0.1f));*/
-
                 currentVelocity = _rb.velocity.magnitude;
                 MaxSpeed();
             }
@@ -59,15 +68,6 @@ namespace TinyBoat
                 _rb.velocity = _rb.velocity.normalized * maxSpeed;
             }
         }
-
-        public void ActivePlayerOnBoard()
-        {
-            playerOnBoard.SetActive(true);
-        }
-
-        public void DeactivePlayerOnBoard()
-        {
-            playerOnBoard.SetActive(false);
-        }
+        
     }
 }

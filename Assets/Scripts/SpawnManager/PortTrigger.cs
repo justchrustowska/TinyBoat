@@ -44,12 +44,12 @@ namespace TinyBoat
             if (canExit && Input.GetKeyDown(KeyCode.E))
             {
                 player.SetActive(true);
-                SpawnManager.Instance.SpawnPlayerAt(spawnID, player);
+               // SpawnManager.Instance.SpawnPlayerAt(spawnID, player);
                 OnDockEnter?.Invoke();
                 GameManager.Instance.SwitchToPlayer();
             }
 
-            if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
+            //if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
             {
                 player.SetActive(false);
             }

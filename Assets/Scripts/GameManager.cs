@@ -6,7 +6,7 @@ using Unity.Cinemachine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public ControlState currentControlState = ControlState.ControllingBoat;
+   // public ControlState currentControlState = ControlState.ControllingBoat;
 
     private void Awake()
     {
@@ -16,12 +16,12 @@ public class GameManager : MonoBehaviour
 
     public void SwitchToPlayer()
     {
-        currentControlState = ControlState.ControllingCharacter;
+        //currentControlState = ControlState.ControllingCharacter;
     }
 
     public void SwitchToBoat()
     {
-        currentControlState = ControlState.ControllingBoat;
+        //currentControlState = ControlState.ControllingBoat;
     }
 
 }

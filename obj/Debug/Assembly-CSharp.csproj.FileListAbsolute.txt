@@ -583,3 +583,11 @@ F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Services.Core.Configur
 F:\Projekty\TinyBoat\obj\Debug\Assembly.44154EF1.Up2Date
 F:\Projekty\TinyBoat\obj\Debug\Assembly-CSharp.dll
 F:\Projekty\TinyBoat\obj\Debug\Assembly-CSharp.pdb
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Bindings.OpenImageIO.Editor.dll
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Recorder.Base.dll
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Recorder.dll
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Recorder.Editor.dll
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Recorder.pdb
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Bindings.OpenImageIO.Editor.pdb
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Recorder.Base.pdb
+F:\Projekty\TinyBoat\Temp\Bin\Debug\Assembly-CSharp\Unity.Recorder.Editor.pdb

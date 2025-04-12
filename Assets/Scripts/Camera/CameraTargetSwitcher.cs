@@ -9,54 +9,48 @@ public class CameraTargetSwitcher : MonoBehaviour
     public GameObject playerTarget;
     public CinemachineVirtualCameraBase virtualCamera;
 
+    private PlayerStateMachine _stateMachine;
+
     private void Awake()
     {
+        _stateMachine = FindObjectOfType<PlayerStateMachine>();
+
         boatTarget = GameObject.FindGameObjectWithTag("Boat");
         playerTarget = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        _stateMachine.OnStateChanged += HandleStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        _stateMachine.OnStateChanged -= HandleStateChanged;
+    }
+
+    private void HandleStateChanged(IState newState)
+    {
+        if (newState is PlayerOnLandState)
         {
             SwitchToPlayerTarget();
         }
-
-        if (GameManager.Instance.currentControlState == ControlState.ControllingBoat)
+        else if (newState is PlayerBoatState)
         {
-            virtualCamera.Follow = boatTarget.transform;
-            virtualCamera.LookAt = boatTarget.transform;
-        }
-
-        if (GameManager.Instance.currentControlState == ControlState.ControllingCharacter)
-        {
-            virtualCamera.Follow = playerTarget.transform;
-            virtualCamera.LookAt = playerTarget.transform;
+            SwitchToBoatTarget();
         }
     }
-
-    /*void OnEnable()
+    
+    private void SwitchToPlayerTarget()
     {
-        DockSystem.OnDockEnter += SwitchToPlayerTarget;
-        BoatBoarding.OnBoarding += SwitchToBoatTarget;
-    }
-
-    void OnDisable()
-    {
-        DockSystem.OnDockEnter -= SwitchToPlayerTarget;
-        BoatBoarding.OnBoarding -= SwitchToBoatTarget;
-    }*/
-
-    void SwitchToPlayerTarget()
-    {
-        
         virtualCamera.Follow = playerTarget.transform;
         virtualCamera.LookAt = playerTarget.transform;
     }
-
-    void SwitchToBoatTarget()
+    
+    private void SwitchToBoatTarget()
     {
         virtualCamera.Follow = boatTarget.transform;
         virtualCamera.LookAt = boatTarget.transform;
     }
+    
 }

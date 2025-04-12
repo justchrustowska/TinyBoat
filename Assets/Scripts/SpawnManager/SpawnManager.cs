@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TinyBoat
-{
-    public class SpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
     {
         public static SpawnManager Instance;
         
@@ -11,7 +9,8 @@ namespace TinyBoat
 
         private void Awake()
         {
-            if(Instance == null) Instance = this;
+            if(Instance == null) 
+                Instance = this;
             else Destroy(gameObject);
         }
 
@@ -23,15 +22,19 @@ namespace TinyBoat
             }
         }
 
-        public void UnregisterSpawn(string id)
+        /*public void UnregisterSpawn(string id)
         {
             if (spawnPoints.ContainsKey(id))
             {
                 spawnPoints.Remove(id);
             }
+        }*/
+        public Transform GetSpawn(string id)
+        {
+            return spawnPoints.ContainsKey(id) ? spawnPoints[id].transform : null;
         }
 
-        public void SpawnPlayerAt(string id, GameObject player)
+        /*public void SpawnPlayerAt(string id, GameObject player)
         {
             if (spawnPoints.TryGetValue(id, out SpawnPoint spawnPoint))
             {
@@ -43,8 +46,6 @@ namespace TinyBoat
             else
             {
                 Debug.LogWarning($"SpawnPoint '{id}' not found!");
-            }
+            }*/
             
         }
-    }
-}
