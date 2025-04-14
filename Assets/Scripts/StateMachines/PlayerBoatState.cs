@@ -65,9 +65,9 @@ using UnityEngine.InputSystem.Utilities;
             float rotation = Input.GetAxis("Horizontal");
             _boatRB.AddTorque(Vector3.up * rotation * _rotationSpeed);
             
-            if (_boatRB.velocity.magnitude > maxSpeed)
+            if (_boatRB.linearVelocity.magnitude > maxSpeed)
             {
-               _boatRB.velocity = _boatRB.velocity.normalized * maxSpeed;
+               _boatRB.linearVelocity = _boatRB.linearVelocity.normalized * maxSpeed;
             }
             
             var allPorts = GameObject.FindObjectsOfType<BoatIslandTrigger>();

@@ -56,7 +56,7 @@ namespace TinyBoat
                 float rotationInput = Input.GetAxis("Horizontal");
                 Vector3 rotation = Vector3.up * rotationInput * rotationSpeed * Time.fixedDeltaTime;
                 _rb.MoveRotation(_rb.rotation * Quaternion.Euler(rotation));
-                currentVelocity = _rb.velocity.magnitude;
+                currentVelocity = _rb.linearVelocity.magnitude;
                 MaxSpeed();
             }
         }
@@ -65,7 +65,7 @@ namespace TinyBoat
         {
             if (currentVelocity > maxSpeed)
             {
-                _rb.velocity = _rb.velocity.normalized * maxSpeed;
+                _rb.linearVelocity = _rb.linearVelocity.normalized * maxSpeed;
             }
         }
         

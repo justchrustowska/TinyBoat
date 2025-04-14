@@ -5,18 +5,24 @@ using UnityEngine;
     public class PlayerOnLandState: IPlayerState
     {
         private PlayerBoatTrigger boatTrigger;
+        
         private PlayerStateMachine _stateMachine;
+        
         private CharacterController _controller;
+        
         private Transform _camera;
-        private float _speed = 5f;
         private Transform _boat;
-        private bool _canEnterBoat;
+        private Transform _playerTransform;
+        
+        private float _speed = 10f;
+        private float _rotationSpeed = 80f;
 
         public PlayerOnLandState(PlayerStateMachine stateMachine, CharacterController controller, Transform camera)
         {
             _stateMachine = stateMachine;
             _controller = controller;
             _camera = camera;
+            _playerTransform = controller.transform;
         }
         
         public void Enter()
@@ -32,12 +38,16 @@ using UnityEngine;
 
         public void Tick()
         {
-            Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            Vector3 direction = _camera.forward * input.y + _camera.right * input.x;
-            direction.y = 0;
-            direction.Normalize();
-
-            _controller.Move(direction * _speed * Time.deltaTime);
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical"); 
+            
+            Vector3 move = _playerTransform.forward * vertical;
+            _controller.Move(move * _speed * Time.deltaTime);
+            
+            if (horizontal != 0f)
+            {
+                _playerTransform.Rotate(Vector3.up * horizontal * _rotationSpeed * Time.deltaTime);
+            }
         }
     }
     
