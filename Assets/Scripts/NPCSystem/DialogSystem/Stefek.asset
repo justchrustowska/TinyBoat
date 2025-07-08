@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835195c9307cbef4281321f0127faa90, type: 3}
+  m_Name: Stefek
+  m_EditorClassIdentifier: 
+  speakerName: Stefek
+  lines:
+  - "Witaj! Czy mog\u0142bym ci zleci\u0107 zadanie?"
+  - "Niedaleko st\u0105d jest wyspa na kt\xF3rej powinny rosn\u0105\u0107 lecznicze
+    zio\u0142a. Czy m\xF3g\u0142by\u015B mi je przynie\u015B\u0107? Oczywiscie p\u0142ac\u0119
+    z\u0142otem."
+  questToGive: {fileID: 11400000, guid: e4c46950ad0db2b4d81469b80d2ca0eb, type: 2}

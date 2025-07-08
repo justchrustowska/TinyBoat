@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DockSystem : MonoBehaviour
 {
-    public static event Action OnDockEnter; // gracz wysiada z łodzi
+    public static event Action OnDockEnter;
     
     public GameObject player;
     public Transform playerSpawnPoint;
+    public Transform boat;
 
     public bool canExit = false;
 
@@ -16,6 +17,7 @@ public class DockSystem : MonoBehaviour
         if (other.CompareTag("Boat"))
         {
             canExit = true;
+            boat = other.transform;
         }
     }
 

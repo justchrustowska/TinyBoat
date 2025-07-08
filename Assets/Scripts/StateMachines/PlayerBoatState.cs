@@ -92,5 +92,6 @@ using UnityEngine.InputSystem.Utilities;
             _stateMachine.SwitchState(new PlayerOnLandState(_stateMachine, controller, cam));
 
             Debug.Log("Exited Boat State");
+            port.SnapBoatToPort();
         }
     }
