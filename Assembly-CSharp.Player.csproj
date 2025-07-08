@@ -46,12 +46,20 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\QuestsSystem\IQuestEvent.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\InteractSystem\Collectible.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\ItemCollectedEvent.cs" />
+    <Compile Include="Assets\Scripts\NPCSystem\DialogSystem\DialogueData.cs" />
     <Compile Include="Assets\Scripts\SpawnManager\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\NPCSystem\DialogSystem\DialogTrigger.cs" />
     <Compile Include="Assets\Scripts\StateMachines\IPlayerState.cs" />
     <Compile Include="Assets\Scripts\Player\BoatBoarding.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestUIEntry.cs" />
     <Compile Include="Assets\Scripts\Boat\DockSystem.cs" />
     <Compile Include="Assets\Scripts\SpawnManager\PortTrigger.cs" />
     <Compile Include="Assets\Scripts\WaterWaves.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestProgress.cs" />
     <Compile Include="Assets\AureDevGames\Water Stylized Shader Orto &amp; Perspective Camera\Scripts\FloatingObject.cs" />
     <Compile Include="Assets\Scripts\Player\GameState.cs" />
     <Compile Include="Assets\Scripts\StateMachines\PlayerBoatState.cs" />
@@ -61,14 +69,23 @@
     <Compile Include="Assets\Scripts\StateMachines\PlayerOnLandState.cs" />
     <Compile Include="Assets\Scripts\Boat\BoatPhysics.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestProgressUpdatedEvent.cs" />
     <Compile Include="Assets\Scripts\Boat\BoatController.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraTargetSwitcher.cs" />
+    <Compile Include="Assets\Scripts\InteractSystem\Billboard.cs" />
     <Compile Include="Assets\Art\NewMonoBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\SpawnManager\SpawnPoint.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestData.cs" />
     <Compile Include="Assets\Scripts\StateMachines\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestEventChannel.cs" />
     <Compile Include="Assets\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestSystem.cs" />
     <Compile Include="Assets\Scripts\Boat\Floaters.cs" />
+    <Compile Include="Assets\Scripts\NPCSystem\DialogSystem\DialogueUI.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestUI.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestGivenEvent.cs" />
+    <Compile Include="Assets\Scripts\QuestsSystem\QuestObjective.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed\UnityEngine.dll</HintPath>
     </Reference>

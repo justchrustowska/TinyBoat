@@ -7,6 +7,7 @@ TagManager:
   - Dock
   - Boat
   - BoatEntry
+  - NPC
   layers:
   - Default
   - TransparentFX
