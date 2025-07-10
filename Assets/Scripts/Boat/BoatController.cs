@@ -29,6 +29,7 @@ namespace TinyBoat
             _rb.linearDamping = _dragInWater;
             _rb.angularDamping = _angularDragInWater;
             _rb.centerOfMass = Vector3.down * 0.5f; 
+            
         }
         
         private void OnEnable()

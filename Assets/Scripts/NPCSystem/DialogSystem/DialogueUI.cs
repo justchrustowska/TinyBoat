@@ -17,7 +17,13 @@ public class DialogueUI : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
+        
         Hide();
     }
 
@@ -33,6 +39,11 @@ public class DialogueUI : MonoBehaviour
 
     public void OnNextLine()
     {
+        if (currentDialogue == null) 
+        {
+            return;
+        }
+
         index++;
         if (index < lines.Length)
         {

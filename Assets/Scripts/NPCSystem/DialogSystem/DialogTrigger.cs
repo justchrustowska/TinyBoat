@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 public class DialogTrigger : MonoBehaviour
 {
@@ -13,16 +14,24 @@ public class DialogTrigger : MonoBehaviour
     {
         if (_isPlayerNear && Input.GetKeyDown(KeyCode.E))
         {
-            DialogueData dialogueToShow = dialogueDefault;
-            
             QuestManager qm = FindObjectOfType<QuestManager>();
             var quest = qm.GetActiveQuests()
                 .Find(q => q.Data.questId == questIdToCheck);
 
+            if (quest != null && !quest.IsCompleted)
+            {
+                return;
+            }
+            
+            DialogueData dialogueToShow = dialogueDefault;
+            
             if (quest != null && quest.IsCompleted)
             {
                 dialogueToShow = dialogueQuestDone;
+                Debug.Log($"Quest {questIdToCheck} ukończony - pokazuję specjalny dialog");
             }
+            
+            
             DialogueUI.Instance.ShowDialogue(dialogueToShow);
         }
 

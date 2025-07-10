@@ -194,6 +194,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Library\PackageCache\com.unity.modules.unitywebrequestaudio\package.json" />
     <None Include="Assets\UI\Main.uxml" />
+    <None Include="Assets\Stylized NPC - Peasant Nolant\README.txt" />
     <None Include="Library\PackageCache\com.unity.modules.hierarchycore\package.json" />
     <None Include="Library\PackageCache\com.unity.ugui\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
     <None Include="Library\PackageCache\com.unity.collab-proxy\ValidationConfig.json" />

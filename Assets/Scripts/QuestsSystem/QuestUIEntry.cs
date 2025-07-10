@@ -26,9 +26,14 @@ public class QuestUIEntry : MonoBehaviour
     private void HandleEvent(IQuestEvent e)
     {
         if (e is QuestProgressUpdatedEvent update && update.questId == quest.questId)
-        {
-            questText.text = $"{quest.questName} – {update.currentCount} / {quest.requiredCount}";
-        }
+            if (update.currentCount >= quest.requiredCount)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                questText.text = $"{quest.questName} – {update.currentCount} / {quest.requiredCount}";
+            }
     }
     
 }
