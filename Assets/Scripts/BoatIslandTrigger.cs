@@ -21,7 +21,7 @@ public class BoatIslandTrigger : MonoBehaviour
 
     private void FixedUpdate()
     {
-        SnapBoatToPort();
+        //SnapBoatToPort();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,8 +29,7 @@ public class BoatIslandTrigger : MonoBehaviour
         if (other.CompareTag("Boat"))
         {
             _boatInPort = true;
-            boatTransform = other.transform;
-           // Debug.Log("Boat in port");
+            //boatTransform = other.transform;
         }
     }
 

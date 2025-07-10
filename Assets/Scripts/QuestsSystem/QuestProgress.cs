@@ -16,12 +16,18 @@ public class QuestProgress
 
     public void ApplyEvent(IQuestEvent e)
     {
-        if (e is ItemCollectedEvent collected && collected.itemId == Data.itemToCollectId && !IsCompleted)
+        Debug.Log($"[QuestProgress] ApplyEvent: {e.GetType().Name} for quest {Data.questName}");
+
+        if (e is ItemCollectedEvent collected)
         {
-            Debug.Log($"Item collected: {collected.itemId} Amount: {collected.amount}");
-            Debug.Log($"[QuestProgress] Item collected: {collected.itemId} Amount: {collected.amount} => CurrentCount: {CurrentCount}/{Data.requiredCount}");
-            CurrentCount += collected.amount;
-            
+            Debug.Log($"[QuestProgress] Comparing collected.itemId ({collected.itemId}) to Data.itemToCollectId ({Data.itemToCollectId})");
+        }
+
+        if (e is ItemCollectedEvent collected2 && collected2.itemId == Data.itemToCollectId && !IsCompleted)
+        {
+            Debug.Log($"[QuestProgress] Item collected: {collected2.itemId}, amount: {collected2.amount}");
+            CurrentCount += collected2.amount;
+
             QuestEventChannel.Raise(new QuestProgressUpdatedEvent(Data.questId, CurrentCount));
         }
     }

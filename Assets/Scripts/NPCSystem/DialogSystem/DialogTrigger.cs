@@ -2,18 +2,31 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    public DialogueData dialogueData;
-    private bool isPlayerNear = false;
+    [Header("Dialoges")]
+    public DialogueData dialogueDefault;
+    public DialogueData dialogueQuestDone;
+    public string questIdToCheck;
+
+    private bool _isPlayerNear;
 
     private void Update()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
+        if (_isPlayerNear && Input.GetKeyDown(KeyCode.E))
         {
-            DialogueUI.Instance.ShowDialogue(dialogueData);
-            Debug.Log("Dialog trigger clicked");
+            DialogueData dialogueToShow = dialogueDefault;
+            
+            QuestManager qm = FindObjectOfType<QuestManager>();
+            var quest = qm.GetActiveQuests()
+                .Find(q => q.Data.questId == questIdToCheck);
+
+            if (quest != null && quest.IsCompleted)
+            {
+                dialogueToShow = dialogueQuestDone;
+            }
+            DialogueUI.Instance.ShowDialogue(dialogueToShow);
         }
 
-        if (isPlayerNear && DialogueUI.Instance != null && Input.GetKeyDown(KeyCode.Space))
+        if (_isPlayerNear && DialogueUI.Instance != null && Input.GetKeyDown(KeyCode.Space))
         {
             DialogueUI.Instance.OnNextLine();
         }
@@ -22,12 +35,12 @@ public class DialogTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-            isPlayerNear = true;
+            _isPlayerNear = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-            isPlayerNear = false;
+            _isPlayerNear = false;
     }
 }

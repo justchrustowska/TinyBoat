@@ -148,6 +148,7 @@
     <None Include="Library\PackageCache\com.unity.feature.development\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.unityanalytics\package.json" />
     <None Include="Library\PackageCache\com.unity.ide.rider\package.json" />
+    <None Include="Assets\TextMesh Pro\Fonts\OFL.txt" />
     <None Include="Library\PackageCache\com.unity.searcher\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.video\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
